@@ -85,7 +85,6 @@
       transform: translateY(-2px);
     }
 
-    /* Ocultar audio */
     audio {
       display: none;
     }
@@ -94,7 +93,6 @@
 
 <body>
 
-  <!-- 🎧 Música -->
   <audio id="bg-music" loop>
     <source src="music/FinalChapter.mp3" type="audio/mp3">
   </audio>
@@ -157,8 +155,7 @@
     }
 
     setInterval(updateCountdown, 1000);
-
-    // 🎧 Música con fade-in
+    
     const music = document.getElementById("bg-music");
     music.volume = 0.001;
 
