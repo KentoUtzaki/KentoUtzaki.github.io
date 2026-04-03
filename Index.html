@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>F . A . C</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+    body {
+      background: radial-gradient(circle at top, #111 0%, #050505 100%);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      letter-spacing: 4px;
+      margin-bottom: 40px;
+      color: #ddd;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+
+    .box {
+      position: relative;
+      background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+    }
+
+    .box::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      width: 80%;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .number {
+      font-size: 2.8rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .label {
+      font-size: 0.75rem;
+      color: #777;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* Texto pequeño personalizable */
+    .subtext {
+      max-width: 500px;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 10px;
+      line-height: 1.4;
+    }
+
+    .buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      background: #ffffff08;
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(5px);
+      transition: 0.3s;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background: #ffffff18;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>PRÓXIMAMENTE</h1>
+
+  <div class="countdown">
+    <div class="box">
+      <div id="days" class="number">00</div>
+      <div class="label">DÍAS</div>
+    </div>
+    <div class="box">
+      <div id="hours" class="number">00</div>
+      <div class="label">HORAS</div>
+    </div>
+    <div class="box">
+      <div id="minutes" class="number">00</div>
+      <div class="label">MINUTOS</div>
+    </div>
+    <div class="box">
+      <div id="seconds" class="number">00</div>
+      <div class="label">SEGUNDOS</div>
+    </div>
+  </div>
+
+  <!-- Texto personalizable -->
+  <p class="subtext">
+    Filamentos de éter tejen la carpa, donde mentes astilladas exhalan su última gran obra.
+  </p>
+
+  <div class="buttons">
+    <a href="https://x.com/KentoUtzaki" class="btn">X</a>
+    <a href="https://www.instagram.com/kento_utzaki/" class="btn">Instagram</a>
+    <a href="https://discord.gg/gAg5AZrBm2" class="btn">Discord</a>
+  </div>
+
+  <script>
+    const targetDate = new Date("2026-04-08T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById("days").innerText = String(days).padStart(2, '0');
+      document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+      document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
+    }
+
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
