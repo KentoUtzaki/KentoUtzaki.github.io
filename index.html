@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>F . A . C</title>
 
   <style>
@@ -85,6 +85,7 @@
       transform: translateY(-2px);
     }
 
+
     audio {
       display: none;
     }
@@ -92,6 +93,7 @@
 </head>
 
 <body>
+
 
   <audio id="bg-music" loop>
     <source src="music/FinalChapter.mp3" type="audio/mp3">
@@ -155,7 +157,7 @@
     }
 
     setInterval(updateCountdown, 1000);
-    
+
     const music = document.getElementById("bg-music");
     music.volume = 0.001;
 
